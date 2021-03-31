@@ -1,6 +1,6 @@
 #### steps to creating my file server
 
-* create a branch from the repo I created yester day to utilize the createResponse and parseRequest functions
+* create a new branch in the repo I created yesterday to utilize the createResponse and parseRequest functions
 * create a public directory
 * create an index.html file in public directory
 * in app.js import node file server
@@ -12,3 +12,8 @@ fs.readFile('./public/index.html')
     .catch((err)=>console.error(err))
 ```
 * should console log contents of ./public/index.html
+* replace with:
+```
+fs.readFile('./public/index.html')
+    .then((data)=>socket.end(createResponse({body:data})))
+```
